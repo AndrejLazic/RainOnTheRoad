@@ -7,6 +7,25 @@ body {
   font-family: sans-serif;
 }
 
+button {
+  margin: 0;
+  width: 80%;
+  height: 10%;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin: 0;
+  position: absolute;
+  top: 68%;
+  left: 10%;
+  
+  transition: all 0.5s ease-in-out;
+}
+
+button:hover {
+  transform: translate(0px, 3px);
+}
+
 div * {
   padding: 0;
   margin: 0;
@@ -18,20 +37,12 @@ div * {
   max-height: 448px;
   width: 100%;
   height: 100%;
-  position: left;
+  position: relative;
   margin: 100px auto;
 }
 
-.cellprefix {
-  width: 100%;
-  height: 100%;
-  max-width: 50px;
-  max-height: 50px;
-  float: left;
-  padding: 15px 0 0 20px;
-}
-
 .gamecell {
+  background: whitesmoke;
   border: 1px solid black;
   width: 100%;
   height: 100%;
