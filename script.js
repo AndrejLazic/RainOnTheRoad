@@ -35,5 +35,5 @@ function counting_white(){
                 white++;
             }
         }
-        console.log("belih", white);
+        //console.log("belih", white);
 }
