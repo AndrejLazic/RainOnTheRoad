@@ -16,6 +16,36 @@ function coloring_white(cell_id){
         counting_white()
 }
 
+function coloring_all_white(){
+    const gamecells = document.querySelectorAll(".gamecell");
+        for(let i = 0; i < gamecells.length; i++){
+            gamecells[i].style.backgroundColor = "whitesmoke";
+        }
+}
+
+function coloring_blue(){
+    const gamecells = document.querySelectorAll(".gamecell");
+        for(let i = 0; i < gamecells.length; i++){
+            if(gamecells[i].style.backgroundColor == "whitesmoke"){
+                var forward = i - 1;
+                var backward = i + 1;
+                do{
+                    forward++;
+                }
+                while(gamecells[forward].style.backgroundColor !== "black" && forward < 7);
+
+                do{
+                    backward--;
+                }
+                while(gamecells[backward].style.backgroundColor !== "black" && backward > 0);
+
+                if(gamecells[backward].style.backgroundColor == "black" && gamecells[forward].style.backgroundColor == "black"){
+                    gamecells[i].style.backgroundColor = "blue";
+                }
+            }
+        }
+}
+
 document.querySelectorAll(".gamecell").forEach(item => {
     item.addEventListener('click', function () {
         i = parseInt(item.id);
@@ -26,6 +56,11 @@ document.querySelectorAll(".gamecell").forEach(item => {
         }
     })
 })
+
+document.getElementById("button").addEventListener("click", function() {
+    console.log("Finish button");
+    coloring_blue();
+  });
 
 function counting_white(){
     const gamecells = document.querySelectorAll(".gamecell");
