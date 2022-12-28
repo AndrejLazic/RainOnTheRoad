@@ -8,6 +8,8 @@ body {
 }
 
 button {
+  background-color: #F1592A;
+  font-size: large;
   margin: 0;
   width: 80%;
   height: 10%;
@@ -18,7 +20,6 @@ button {
   position: absolute;
   top: 68%;
   left: 10%;
-  
   transition: all 0.5s ease-in-out;
 }
 

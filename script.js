@@ -56,8 +56,8 @@ document.querySelectorAll(".gamecell").forEach(item => {
 })
 
 document.getElementById("button").addEventListener("click", function() {
-    console.log("Finish button");
     coloring_blue();
+    document.getElementById("button").disabled = true;
     counting_white();
   });
 
@@ -69,5 +69,6 @@ function counting_white(){
                 white++;
             }
         }
-        console.log("belih", white);
+    document.getElementById("button").innerHTML = "Ima  "+ white + "  praznih polja" ;
+        
 }
