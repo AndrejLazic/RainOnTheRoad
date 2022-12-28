@@ -1,11 +1,8 @@
-counting_white()
-
 function coloring_black(cell_id){
     const gamecells = document.querySelectorAll(".gamecell");
         for(let i = cell_id; i < gamecells.length; i = i + 8){
             gamecells[i].style.backgroundColor = "black";
         }
-        counting_white()
 }
 
 function coloring_white(cell_id){
@@ -13,7 +10,6 @@ function coloring_white(cell_id){
         for(let i = cell_id; i >= 0; i = i - 8){
             gamecells[i].style.backgroundColor = "whitesmoke";
         }
-        counting_white()
 }
 
 function coloring_all_white(){
@@ -31,16 +27,18 @@ function coloring_blue(){
                 var backward = i + 1;
                 do{
                     forward++;
+                    var moduo_forward = forward % 8;
                 }
-                while(gamecells[forward].style.backgroundColor !== "black" && forward < 7);
+                while(gamecells[forward].style.backgroundColor !== "black" && moduo_forward < 7);
 
                 do{
                     backward--;
+                    var moduo_backward = backward % 8;
                 }
-                while(gamecells[backward].style.backgroundColor !== "black" && backward > 0);
+                while(gamecells[backward].style.backgroundColor !== "black" && moduo_backward > 0);
 
                 if(gamecells[backward].style.backgroundColor == "black" && gamecells[forward].style.backgroundColor == "black"){
-                    gamecells[i].style.backgroundColor = "blue";
+                    gamecells[i].style.backgroundColor = "#0074BA";
                 }
             }
         }
@@ -60,6 +58,7 @@ document.querySelectorAll(".gamecell").forEach(item => {
 document.getElementById("button").addEventListener("click", function() {
     console.log("Finish button");
     coloring_blue();
+    counting_white();
   });
 
 function counting_white(){
@@ -70,5 +69,5 @@ function counting_white(){
                 white++;
             }
         }
-        //console.log("belih", white);
+        console.log("belih", white);
 }
