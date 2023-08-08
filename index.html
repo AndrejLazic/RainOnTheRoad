@@ -6,66 +6,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kisa na putu</title>
+
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    
-    
-    <div id="game">    
+    <h1>Rain On The Road</h1>
 
-        <div class="gamecell" id="0" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="1" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="2" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="3" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="4" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="5" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="6" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="7" style="background-color: whitesmoke;"></div>
-        
-        <div class="gamecell" id="8" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="9" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="10" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="11" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="12" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="13" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="14" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="15" style="background-color: whitesmoke;"></div>
-        
-        <div class="gamecell" id="16" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="17" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="18" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="19" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="20" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="21" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="22" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="23" style="background-color: whitesmoke;"></div>
-        
-        <div class="gamecell" id="24" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="25" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="26" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="27" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="28" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="29" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="30" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="31" style="background-color: whitesmoke;"></div>
-        
-        <div class="gamecell" id="32" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="33" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="34" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="35" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="36" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="37" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="38" style="background-color: whitesmoke;"></div>
-        <div class="gamecell" id="39" style="background-color: whitesmoke;"></div>
+    <div class="page">
 
-        <div>
-            <button id="button"><b>FINISH</b></button>
+        <div class="text">
+            <p> 
+                This task is called "Rain on the Road" and consists of a 5x8 matrix. 
+                The user needs to mark desired cells on the matrix to indicate the locations of a road. 
+                These marked cells will be colored black.
+                <br><br>
+                Once the user marks the road, the algorithm will analyze the matrix and color the potholes in blue. 
+                Potholes are defined as cells that are surrounded by black cells on both sides, which represent the road. The algorithm will color only those cells that meet this condition.
+                <br><br>
+                Finally, the algorithm will calculate how many cells remain uncolored, i.e., 
+                how many cells were neither marked as road nor colored as potholes.
+                <br><br>
+                In summary, the user marks the road, the algorithm identifies potholes based on 
+                neighboring cells, colors them, and then calculates the number of remaining uncolored cells.
+            </p>
         </div>
+
+        <div class="game">    
+
+            <div class="gamecell" id="0" ></div>
+            <div class="gamecell" id="1" ></div>
+            <div class="gamecell" id="2" ></div>
+            <div class="gamecell" id="3" ></div>
+            <div class="gamecell" id="4" ></div>
+            <div class="gamecell" id="5" ></div>
+            <div class="gamecell" id="6" ></div>
+            <div class="gamecell" id="7" ></div>
+            
+            <div class="gamecell" id="8" ></div>
+            <div class="gamecell" id="9" ></div>
+            <div class="gamecell" id="10" ></div>
+            <div class="gamecell" id="11" ></div>
+            <div class="gamecell" id="12" ></div>
+            <div class="gamecell" id="13" ></div>
+            <div class="gamecell" id="14" ></div>
+            <div class="gamecell" id="15" ></div>
+            
+            <div class="gamecell" id="16" ></div>
+            <div class="gamecell" id="17" ></div>
+            <div class="gamecell" id="18" ></div>
+            <div class="gamecell" id="19" ></div>
+            <div class="gamecell" id="20" ></div>
+            <div class="gamecell" id="21" ></div>
+            <div class="gamecell" id="22" ></div>
+            <div class="gamecell" id="23" ></div>
+            
+            <div class="gamecell" id="24" ></div>
+            <div class="gamecell" id="25" ></div>
+            <div class="gamecell" id="26" ></div>
+            <div class="gamecell" id="27" ></div>
+            <div class="gamecell" id="28" ></div>
+            <div class="gamecell" id="29" ></div>
+            <div class="gamecell" id="30" ></div>
+            <div class="gamecell" id="31" ></div>
+            
+            <div class="gamecell" id="32" ></div>
+            <div class="gamecell" id="33" ></div>
+            <div class="gamecell" id="34" ></div>
+            <div class="gamecell" id="35" ></div>
+            <div class="gamecell" id="36" ></div>
+            <div class="gamecell" id="37" ></div>
+            <div class="gamecell" id="38" ></div>
+            <div class="gamecell" id="39" ></div>
+
+            <button class="finish" id="finish">FINISH</button>
+            <button class="repeat" id="repeat">REPEAT</button>
+        </div>
+
     </div>
-
-    <script src="script.js"></script>
-
+    
 </body>
 
 </html>

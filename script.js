@@ -1,3 +1,8 @@
+function check(cell_id){
+    const gamecells = document.querySelectorAll(".gamecell");
+    alert(gamecells[cell_id].style.backgroundColor + "HELLOW FROM CELL ID (" + cell_id + ")");
+}
+
 function coloring_black(cell_id){
     const gamecells = document.querySelectorAll(".gamecell");
         for(let i = cell_id; i < gamecells.length; i = i + 8){
@@ -44,23 +49,6 @@ function coloring_blue(){
         }
 }
 
-document.querySelectorAll(".gamecell").forEach(item => {
-    item.addEventListener('click', function () {
-        i = parseInt(item.id);
-        if(item.style.backgroundColor == "black"){
-        coloring_white(i);
-        }else{
-        coloring_black(i);
-        }
-    })
-})
-
-document.getElementById("button").addEventListener("click", function() {
-    coloring_blue();
-    document.getElementById("button").disabled = true;
-    counting_white();
-  });
-
 function counting_white(){
     const gamecells = document.querySelectorAll(".gamecell");
     var white = 0;
@@ -69,6 +57,51 @@ function counting_white(){
                 white++;
             }
         }
-    document.getElementById("button").innerHTML = "Ima  "+ white + "  praznih polja" ;
+    document.getElementById("finish").innerHTML = white + " empty fields" ;
         
 }
+
+coloring_all_white();
+
+function cellClickHandler(event) {
+    const item = event.currentTarget;
+    const i = parseInt(item.id);
+  
+    if (item.style.backgroundColor === "black") {
+      coloring_white(i);
+    } else {
+      coloring_black(i);
+    }
+  }
+  
+  document.querySelectorAll(".gamecell").forEach(item => {
+    item.addEventListener('click', cellClickHandler);
+  });
+
+  function finishButtonClickHandler() {
+    coloring_blue();
+    document.getElementById("finish").disabled = true;
+  
+    document.querySelectorAll(".gamecell").forEach(item => {
+      item.removeEventListener('click', cellClickHandler);
+    });
+  
+    counting_white();
+  }
+
+  document.getElementById("finish").addEventListener("click", finishButtonClickHandler);
+
+
+  function repeatButtonClickHandler(){
+    coloring_all_white();
+    document.getElementById("finish").disabled = false;
+    document.getElementById("finish").innerHTML = "FINISH";
+
+    document.querySelectorAll(".gamecell").forEach(item => {
+        item.addEventListener('click', cellClickHandler);
+      });
+  }
+
+  document.getElementById("repeat").addEventListener("click", repeatButtonClickHandler);
+
+
